@@ -14,7 +14,7 @@ const Map = ({ coords, places, setCoords, setBounds, setChildClicked, weatherDat
   return (
     <div className={classes.mapContainer}>
       <GoogleMapReact
-        bootstrapURLKeys={{ key: 'AIzaSyA2ulNdNH-vuzi3DGlhslqsUW0o_n7_Gro' }}
+        bootstrapURLKeys={{ key: 'AIzaSyDKAIWbkM0JwPKv5CVcIvM_iYsj5c7XtMs' }}
         defaultCenter={coords}
         center={coords}
         defaultZoom={14}
@@ -38,10 +38,10 @@ const Map = ({ coords, places, setCoords, setBounds, setChildClicked, weatherDat
               : (
                 <Paper elevation={3} className={classes.paper}>
                   <Typography className={classes.typography} variant="subtitle2" gutterBottom> {place.name}</Typography>
-                  <img
+                  {/* <img
                     className={classes.pointer}
                     src={place.photo ? place.photo.images.large.url : 'https://www.foodserviceandhospitality.com/wp-content/uploads/2016/09/Restaurant-Placeholder-001.jpg'}
-                  />
+                  /> */}
                   <Rating name="read-only" size="small" value={Number(place.rating)} readOnly />
                 </Paper>
               )}
@@ -49,7 +49,7 @@ const Map = ({ coords, places, setCoords, setBounds, setChildClicked, weatherDat
         ))}
         {weatherData?.list?.length && weatherData.list.map((data, i) => (
           <div key={i} lat={data.coord.lat} lng={data.coord.lon}>
-            <img src={`http://openweathermap.org/img/w/${data.weather[0].icon}.png`} height="70px" />
+            {/* <img src={`http://openweathermap.org/img/w/${data.weather[0].icon}.png`} height="70px" /> */}
           </div>
         ))}
       </GoogleMapReact>
@@ -58,3 +58,9 @@ const Map = ({ coords, places, setCoords, setBounds, setChildClicked, weatherDat
 };
 
 export default Map;
+
+
+
+// https://travel-advisor.p.rapidapi.com/locations/v2/auto-complete
+
+// 'https://community-open-weather-map.p.rapidapi.com/weather'
